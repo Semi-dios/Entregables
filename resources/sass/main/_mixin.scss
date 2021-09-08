@@ -1,0 +1,30 @@
+/* INDEX MIXIN */
+//--------------
+/*
+01. Box Sahdow
+02. Border radius
+03. Transition
+*/
+
+
+/* Box Sahdow */
+
+@mixin box-shadow($value) {
+    -webkit-box-shadow: $value;
+    -moz-box-shadow: $value;
+    box-shadow: $value;
+}
+/* Border radius */
+@mixin border-radius($pixel...) {
+    border-radius: $pixel;
+    -moz-border-radius:$pixel;
+}
+
+/* Transition */
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}

@@ -1,0 +1,22 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+// Font Awesome
+@import '~@fortawesome/fontawesome-free/scss/brands';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Global
+
+@import './main/global';
+
+//Page
+
+@import './pages/curriculum';

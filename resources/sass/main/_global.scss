@@ -1,0 +1,53 @@
+body, *{
+    font-family:  $font-family-sans-serif;
+    color: $white;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+    font-size: 2.5rem;
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+h5 {
+    font-size: 1.5rem;
+}
+
+h6 {
+    font-size: 1.2rem;
+}
+
+.text-primary {
+    color: $primary;
+}
+
+.text-yellow {
+    color: $yellow;
+}
+.text-orange {
+    color: $orange;
+}
+
+.text-red {
+    color: $red;
+}
+.text-purple {
+    color: $purple;
+}
+
+
+ul {
+    list-style: none;
+    li {
+        list-style: none;
+    }
+}

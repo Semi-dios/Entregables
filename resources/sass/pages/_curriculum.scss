@@ -1,0 +1,295 @@
+.Curriculum {
+        @include box-shadow(0 0.5rem .5rem .5rem 00000023);
+        background-image: linear-gradient(to right, $secondary, $secondary-alt,  $primary-alt, $primary);
+        padding: 2rem 3rem;
+        position: relative;
+        &:before {
+            content: "";
+            position: absolute;
+            right:0;
+            border-radius: 0 0 0 120%;
+            top: 0;
+            width: 100%;
+            border-bottom: 0.5rem;
+            border-bottom-style: solid;
+            -webkit-border-image: -webkit-gradient(to right, $secondary ,$secondary-alt, $secondary2-alt) repeat repeat;
+            border-image: -webkit-gradient(to right, $secondary ,$secondary-alt, $secondary2-alt) repeat repeat;
+            min-height: 13rem;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            background-image: linear-gradient(to right,$secondary ,$secondary-alt, $secondary2-alt);
+            @include box-shadow(0 0.5rem .5rem .5rem 00000023);
+        }
+
+        .panel {
+            &--header  {
+                display: grid;
+                grid-template-columns: 35% 65% ;
+                justify-content: center;
+                min-height: 13rem;
+
+                h2 {
+                    font-weight: 600;
+                }
+                .content-img{
+                    display: flex;
+                    justify-content: center;
+                    z-index: 5;
+                }
+                picture {
+                    width: 120px;
+                    height: 120px;
+                    @include border-radius(100%);
+                    padding: 0.250rem;
+                    @include box-shadow(0 0.5rem .5rem .5rem rgba($primary,0.32));
+                    background: $white;
+                    img {
+                        object-fit: cover;
+                        max-width: 120px;
+                        width: 100%;
+                        height: auto;
+                        @include border-radius(100%);
+                    }
+                }
+                .content-name {
+                    text-align: right;
+                    z-index: 5;
+                    h2 {
+                        font-weight: bold;
+                        display: block;
+
+                    }
+                    h6 {
+                        font-weight: 700;
+                    }
+                }
+
+            }
+
+            &--body {
+                h6 {
+                    font-weight: 700;
+                }
+                .About-me {
+                    width: 100%;
+                    text-align: center;
+                    padding:  1rem;
+                    p {
+                        font-size: 0.750rem;
+                    }
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        bottom:0;
+                        width: 80%;
+                        height: 0.150rem;
+                        left: 10%;
+                        background: $gray-1;
+                        @include box-shadow(0 0.5rem .5rem .5rem 00000023);
+                    }
+
+
+                }
+                .p-skills {
+                    width: 100%;
+                    text-align: center;
+                    padding:  1rem;
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        bottom:0;
+                        width: 80%;
+                        height: 0.150rem;
+                        left: 10%;
+                        background: $gray-1;
+                        @include box-shadow(0 0.5rem .5rem .5rem 00000023);
+                    }
+                    .ul-p-skills  {
+                        padding: 0;
+                        li {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                        }
+                        span {
+                            position: relative;
+                            display: block;
+                            background: $white;
+                            width: 100%;
+                            height: 0.350rem;
+                            @include transition(0.5s ease );
+                            @include  border-radius(.250rem);
+                            margin-left: 0.5rem;
+                            max-width: 100px;
+                        }
+                        @for $i from 1 through 3 {
+                            li:nth-child(#{$i}) span:before {
+                                transition-delay: 0.5s + ($i/3);
+                                background: darken($primary-alt,$i*4);
+                                content: "";
+                                height: 0.350rem;
+                                position: absolute;
+                                left: 0;
+                                width: (10*$i)+50%;
+                            }
+                        }
+
+                    }
+                }
+                .contact {
+                    width: 100%;
+                    text-align: center;
+                    padding:  1rem;
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        bottom:0;
+                        width: 80%;
+                        height: 0.150rem;
+                        left: 10%;
+                        background: $gray-1;
+                        @include box-shadow(0 0.5rem .5rem .5rem 00000023);
+                    }
+                    .ul-contact {
+                        padding: 0;
+                        li {
+                            background: transparent;
+                            border: 0;
+                            padding: 0.5rem 0;
+
+                            text-align: center;
+                            i {
+                                font-size: 0.750rem;
+                                display: inline-flex;
+                                align-items: center;
+                                justify-content: center;
+                                color: $primary;
+                                width: 1.3rem;
+                                height: 1.3rem;
+                                @include border-radius(1.5rem);
+                                border: 1px solid $primary;
+                            }
+                            span {
+                                font-size: 0.750rem;
+                            }
+                        }
+                    }
+                }
+                .other {
+                    width: 100%;
+                    text-align: center;
+                    padding:  1rem;
+
+                    .ul-other {
+                        padding: 0;
+                        li {
+                            background: transparent;
+                            border: 0;
+                            padding: 0.5rem 0;
+
+                            text-align: center;
+                            i {
+                                font-size: 0.750rem;
+                                display: inline-flex;
+                                align-items: center;
+                                justify-content: center;
+                                color: $primary;
+                                width: 1.3rem;
+                                height: 1.3rem;
+                                @include border-radius(1.5rem);
+                                border: 1px solid $primary;
+                            }
+                            a {
+                                font-size: 0.750rem;
+                                text-decoration: none;
+                                color: $white;
+                                &:hover, &:active, &:focus {
+                                    color: $white;
+                                    cursor: pointer;
+                                }
+
+                            }
+                        }
+                    }
+                }
+                .prof-skill {
+                    width: 100%;
+
+
+                    .ul-prof-skill {
+                        padding: 0;
+                        li {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                        }
+                        span {
+                            position: relative;
+                            display: block;
+                            background: $white;
+                            width: 100%;
+                            height: 0.350rem;
+                            @include transition(0.5s ease );
+                            @include  border-radius(.250rem);
+                            margin-left: 0.5rem;
+                            max-width: 50%;
+                        }
+                        @for $i from 1 through 10 {
+                            li:nth-child(#{$i}) span:before {
+                                transition-delay: 0.5s + ($i/3);
+                                background: darken($secondary2-alt,$i*1.5);
+                                content: "";
+                                height: 0.350rem;
+                                position: absolute;
+                                left: 0;
+                                width: (10*$i)+10%;
+                            }
+                        }
+
+                    }
+                }
+                .work-experence {
+                    .desc {
+
+                        ul {
+                            position: relative;
+                            margin-top: 1rem;
+                            margin-left: 0.250rem;
+                            &:before {
+                                content: "";
+                                position: absolute;
+                                top: 1.850rem;
+                                left: 1.150rem;
+                                width: 10px;
+                                height: 10px;
+                                @include border-radius(50%);
+                                background: $white;
+                            }
+                            li {
+                                list-style-type: none;
+                                position: relative;
+                                &:before {
+                                    content: "";
+                                    position: absolute;
+                                    top:2.5rem;
+                                    left: -1.1250rem;
+                                    height: 100%;
+                                    border-left: 2px solid $white;
+                                }
+
+                            }
+
+                            &:last-of-type li {
+                                &:before {
+                                    content: none;
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+
+}
