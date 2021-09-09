@@ -4,6 +4,8 @@ import VueRouter from 'vue-router';
 
 const router = new VueRouter({
   history,
+  base: //Active into heroku
+  'http://entregables.herokuapp.com/public/',
   routes:[
 
     {

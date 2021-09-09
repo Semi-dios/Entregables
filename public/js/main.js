@@ -67583,6 +67583,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   history: history,
+  base: //Active into heroku
+  'http://entregables.herokuapp.com/public/',
   routes: [{
     path: '/',
     name: 'dashboard',
