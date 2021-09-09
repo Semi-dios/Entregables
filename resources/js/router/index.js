@@ -4,7 +4,7 @@ import VueRouter from 'vue-router';
 
 const router = new VueRouter({
   history,
-  base: process.env.BASE_URL,
+  base: window.location.origin,
   routes:[
 
     {
@@ -39,6 +39,7 @@ const router = new VueRouter({
 
   ]
 });
+console.log(window.location.origin)
 
 
 
