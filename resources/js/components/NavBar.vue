@@ -13,6 +13,9 @@
       <li class="nav-item">
         <router-link class="nav-link" to="/curriculum">Curriculum Vitae</router-link>
       </li>
+      <li class="nav-item">
+        <router-link class="nav-link" to="/users">Crud Users</router-link>
+      </li>
 
     </ul>
 

@@ -14,5 +14,6 @@
             <app></app>
         </div>
         <script src="{{ asset('js/main.js')}}"></script>
+
     </body>
 </html>

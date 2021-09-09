@@ -26,5 +26,9 @@
         "vue-axios": "^3.2.4",
         "vue-router": "^3.0",
         "@fortawesome/fontawesome-free": "^5.15.4"
+    },
+    "dependencies": {
+        "bootstrap-table": "^1.18.3",
+        "vue-excel-export": "^0.1.3"
     }
 }

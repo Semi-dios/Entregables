@@ -16,6 +16,25 @@ const router = new VueRouter({
       name:'curriculum',
       component: require('../views/Curriculum.vue').default,
     },
+    {
+        path: '/users',
+        name: 'users',
+        component: require('../views/User.vue').default,
+
+    },
+    {
+        path: '/users/:id/show',
+        name: 'users.show',
+        component: require('../views/user/Show.vue').default,
+
+    },
+    {
+        path: '/users/:id/edit',
+        name: 'users.edit',
+        component: require('../views/user/Edit.vue').default,
+
+    },
+
 
   ]
 });
