@@ -9,6 +9,7 @@ import VueAxios from 'vue-axios';
 Vue.use(VueAxios, axios);
 
 
+
 import VeeValidate from 'vee-validate';
 Vue.use(VueRouter);
 

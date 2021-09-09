@@ -20,7 +20,8 @@ try {
  */
 
 window.axios = require('axios');
-
+//Active into heroku
+window.axios.defaults.baseURL = 'https://dashboard.heroku.com/public';
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**
