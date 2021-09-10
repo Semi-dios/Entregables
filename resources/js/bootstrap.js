@@ -21,7 +21,7 @@ try {
 
 window.axios = require('axios');
 //Active into heroku
-window.axios.defaults.baseURL = 'http://entregables.herokuapp.com/public/';
+//window.axios.defaults.baseURL = 'http://entregables.herokuapp.com/public/';
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**

@@ -2249,6 +2249,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {},
   data: function data() {
@@ -51421,7 +51433,7 @@ var render = function() {
                         {
                           staticClass:
                             "btn btn-app my-1 mr-3 bg-success btn-sm",
-                          attrs: { href: "public/#/users/" + r.id + "/show" }
+                          attrs: { href: "/#/users/" + r.id + "/show" }
                         },
                         [
                           _c("i", { staticClass: "fas fa-eye mr-1" }),
@@ -51434,7 +51446,7 @@ var render = function() {
                         {
                           staticClass:
                             "btn btn-app my-1 mr-3 bg-primary btn-sm",
-                          attrs: { href: "public/#/users/" + r.id + "/edit" }
+                          attrs: { href: "/#/users/" + r.id + "/edit" }
                         },
                         [
                           _c("i", { staticClass: "fas fa-edit mr-1" }),
@@ -67433,8 +67445,8 @@ try {
 
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js"); //Active into heroku
+//window.axios.defaults.baseURL = 'http://entregables.herokuapp.com/public/';
 
-window.axios.defaults.baseURL = 'http://entregables.herokuapp.com/public/';
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
