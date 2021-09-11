@@ -136,7 +136,7 @@
 
 <script>
 export default {
-  name: "Product Edit",
+  name: "ProductEdit",
   data() {
     return {
       products: [],
@@ -163,7 +163,7 @@ export default {
         .then((response) => {
           this.products = response.data.product;
           this.companies = response.data.companies;
-         // console.log( this.companies);
+          console.log( this.companies);
         })
         .catch((error) => {
           this.error = error;
@@ -222,6 +222,9 @@ export default {
  created() {
     this.getinfoUser();
   },
+  watch() {
+     this.getinfoUser();
+  }
 };
 </script>
 

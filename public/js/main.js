@@ -2681,7 +2681,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Product Edit",
+  name: "ProductEdit",
   data: function data() {
     var _ref;
 
@@ -2707,7 +2707,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       console.log(this.$route.params.id);
       axios.get("api/product-detail/edit/" + this.$route.params.id).then(function (response) {
         _this.products = response.data.product;
-        _this.companies = response.data.companies; // console.log( this.companies);
+        _this.companies = response.data.companies;
+        console.log(_this.companies);
       })["catch"](function (error) {
         _this.error = error;
         console.log(error);
@@ -2765,6 +2766,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   created: function created() {
+    this.getinfoUser();
+  },
+  watch: function watch() {
     this.getinfoUser();
   }
 });
