@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Company;
+use Image;
+
 class ProductController extends Controller
 {
     /**
@@ -15,9 +17,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-            $prodcuts = Company::find(10)->products()->get();
-            if ($prodcuts) {
-                return response()->json(['products' => $prodcuts, 'message' => 'success  !!'], 200);
+            $products =  Product::all();
+            //$products =  Product::with('company')->findOrFail(120);
+            if ($products) {
+                return response()->json(['products' => $products, 'message' => 'success  !!'], 200);
             } else {
                 return response()->json([['error' => 'Unauthorized', 'message' => 'error !!'], 401]);
             }
@@ -52,7 +55,12 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+       $product =  Product::with('company')->findOrFail($id);
+        if ($product) {
+        return response()->json(['product' => $product, 'message' => 'success  !!'], 200);
+        } else {
+            return response()->json([['error' => 'Unauthorized', 'message' => 'error !!'], 401]);
+        }
     }
 
     /**
@@ -63,7 +71,13 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product =  Product::with('company')->findOrFail($id);
+        $companies = Company::all();
+        if ($product) {
+        return response()->json(['product' => $product, 'companies'=>$companies, 'message' => 'success  !!'], 200);
+        } else {
+            return response()->json([['error' => 'Unauthorized', 'message' => 'error !!'], 401]);
+        }
     }
 
     /**
@@ -75,7 +89,35 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       var_dump($request);
+         $request->validate([
+            'name'=>'required',
+            'description'=>'required',
+            'price'=>'required',
+            'company'=>'required',
+
+        ]);
+
+
+
+        if($request->get('image')){
+           $image = $request->get('image');
+           $name = time().'.'.explode('/', explode(':', substr($image,0,strpos($image,';')))[1])[1];
+
+           \Image::make($request->get('image'))->save(public_path('images/').$name);
+        }
+
+        $product = Product::findOrFail($id);
+        $product->name =e($request->name);
+        $product->company_id =e($request->company);
+        $product->description = e($request->description);
+        $product->price = e($request->price);
+        $product->image= $name;
+        $product->update();
+
+
+        return response()->json(['product' => $product, 'message' => 'updated!!'], 200);
+
     }
 
     /**

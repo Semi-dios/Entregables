@@ -16,6 +16,9 @@
       <li class="nav-item">
         <router-link class="nav-link" to="/users">Crud Users</router-link>
       </li>
+      <li class="nav-item">
+        <router-link class="nav-link" to="/products">Crud Products</router-link>
+      </li>
 
     </ul>
 

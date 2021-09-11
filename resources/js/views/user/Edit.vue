@@ -18,11 +18,7 @@
                       v-model="formData.name"
                       v-validate="'required|min:4|max:20'"
                     />
-                    <div class="input-group-append">
-                      <div class="input-group-text">
-                        <span class="fas fa-user"></span>
-                      </div>
-                    </div>
+
                   </div>
                   <div class="input-group col-sm-12">
                     <div
@@ -44,11 +40,7 @@
                       v-model="formData.email"
                       v-validate="'required|email'"
                     />
-                    <div class="input-group-append">
-                      <div class="input-group-text">
-                        <span class="fas fa-envelope"></span>
-                      </div>
-                    </div>
+
                   </div>
                   <div class="input-group col-sm-12">
                     <div
@@ -102,7 +94,6 @@ export default {
       message: "",
       submitted: false,
       successful: false,
-
       error: "",
     };
   },
@@ -131,13 +122,14 @@ export default {
             .then((response) => {
               this.successful = true;
               this.message = response.data.message;
-              console.log(this.message);
+              //console.log(this.message);
              // this.$router.push('/dashboard/users');
             })
             .catch((error) => {
               this.error = error;
               this.submitted = false;
-              console.log(error);
+              //console.log(error);
+
             });
         }
       });

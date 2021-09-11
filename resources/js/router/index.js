@@ -8,7 +8,7 @@ const router = new VueRouter({
   routes:[
 
     {
-      path: '/',
+      path: base+'/',
       name:'dashboard',
       component: require('../views/Landing.vue').default,
     },
@@ -35,11 +35,29 @@ const router = new VueRouter({
         component: require('../views/user/Edit.vue').default,
 
     },
+    {
+        path: '/products',
+        name: 'products',
+        component: require('../views/Product.vue').default,
+
+    },
+    {
+        path: '/products/:id/show',
+        name: 'products.show',
+        component: require('../views/product/Show.vue').default,
+
+    },
+    {
+        path: '/products/:id/edit',
+        name: 'products.edit',
+        component: require('../views/product/Edit.vue').default,
+
+    },
 
 
   ]
 });
-console.log(window.location.origin)
+
 
 
 

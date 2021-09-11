@@ -38,30 +38,30 @@
                <td>{{ r.name }}</td>
                <td>{{ r.email }}</td>
                <td>
-              <!--   <a
+               <a
                   class="btn btn-app my-1 mr-3 bg-success btn-sm"
                   :href="'public/#/users/' + r.id + '/show'"
                 >
                   <i class="fas fa-eye mr-1"></i>Show
-                </a> -->
-               <a
+                </a>
+              <!--  <a
                   class="btn btn-app my-1 mr-3 bg-success btn-sm"
                   :href="'/#/users/' + r.id + '/show'"
                 >
                   <i class="fas fa-eye mr-1"></i>Show
-                </a>
-               <!--  <a
+                </a> -->
+               <a
                   class="btn btn-app my-1 mr-3 bg-primary btn-sm"
                   :href="'public/#/users/' + r.id + '/edit'"
                 >
                   <i class="fas fa-edit mr-1"></i> Edit
-                </a> -->
-                <a
+                </a>
+               <!--  <a
                   class="btn btn-app my-1 mr-3 bg-primary btn-sm"
                   :href="'/#/users/' + r.id + '/edit'"
                 >
                   <i class="fas fa-edit mr-1"></i> Edit
-                </a>
+                </a> -->
                 <a
                   class="btn btn-app my-1 bg-danger btn-sm"
                   data-id="user.id"
