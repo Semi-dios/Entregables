@@ -2276,6 +2276,52 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -52463,7 +52509,7 @@ var staticRenderFns = [
               )
             ]),
             _vm._v(" "),
-            _c("h5", [_vm._v("Requrimientos:")]),
+            _c("h5", [_vm._v("Requerimientos:")]),
             _vm._v(" "),
             _c("ul", [
               _c("li", [_vm._v("Composer")]),
@@ -52501,16 +52547,22 @@ var staticRenderFns = [
                   )
                 ]
               ),
+              _vm._v(" "),
+              _c("br"),
               _vm._v("\n          Instale dependencias digitando "),
               _c("b", [_vm._v(" npm i")]),
               _vm._v(" y luego\n          "),
               _c("b", [_vm._v("composer i")]),
-              _vm._v(" Renombre el archivo "),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v("\n          Renombre el archivo "),
               _c("b", [_vm._v(".env.example")]),
               _vm._v(" a\n          "),
               _c("b", [_vm._v(".env")]),
+              _vm._v(" "),
+              _c("br"),
               _vm._v(
-                " Asigne la base de datos prueba y sus credenciales En la\n          terminal digite "
+                "\n          Asigne la base de datos prueba y sus credenciales En la terminal\n          digite "
               ),
               _c("b", [_vm._v(" php artisan key:generate")])
             ]),
@@ -52519,7 +52571,7 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("hr"),
             _vm._v(" "),
-            _c("p", [_vm._v("A continuacion digite")]),
+            _c("p", [_vm._v("A continuación digite")]),
             _vm._v(" "),
             _c("ul", [
               _c("li", [_vm._v("php artisan migrate")]),
@@ -52531,26 +52583,32 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("p", [
               _vm._v(
-                "\n          Al digitar php artisan route:list podra visulizar las rutas actuales\n          en este casi ubicadas en config/api.php\n        "
+                "\n          Al digitar php artisan route:list podra visulizar las rutas actuales\n          en este caso ubicadas en config/api.php\n        "
               )
             ]),
             _vm._v(" "),
             _c("p", [
               _vm._v(
-                "\n          Inicie servicios digitando php artisan serve -- En una terminal\n          diferente digite npm run watch para que se inicie la compilacion del\n          webpack (css,js,bootstrap,componentes )\n        "
+                "\n          Inicie servicios digitando php artisan serve\n          "
+              ),
+              _c("br"),
+              _vm._v(
+                "\n          En una terminal diferente digite npm run watch para que se inicie la\n          compilación del webpack (css,js,bootstrap,componentes )\n        "
               )
             ]),
             _vm._v(" "),
             _c("p", [
-              _vm._v("Acceda a la url "),
-              _c("a", { attrs: { href: "" } }, [
-                _vm._v("http://127.0.0.1:8000/")
+              _vm._v("\n          Acceda a la url\n          "),
+              _c("b", [
+                _vm._v(
+                  "\n            http://127.0.0.1:8000/ o https://entregables.herokuapp.com/public\n          "
+                )
               ])
             ]),
             _vm._v(" "),
             _c("hr"),
             _vm._v(" "),
-            _c("h2", [_vm._v("Rutas a usar :")]),
+            _c("h2", [_vm._v("Rutas a usar en heroku :")]),
             _vm._v(" "),
             _c("ul", [
               _c("li", [
@@ -52701,11 +52759,31 @@ var staticRenderFns = [
               ])
             ]),
             _vm._v(" "),
+            _c("h5", [_vm._v("Estructura")]),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
             _c("p", [
               _vm._v(
-                "\n              Estructura El projecto se realizo mediante el consumo de rutas Api o\n              end point de Laravel 7 a tra vez de componentes elaborados en vue ,\n              por lo tanto las vistas las encontrara en la carpeta\n              Resources/js/views , estas a su vez se renderizan por medio del\n              archivo routes.js que se ejecuta dentro del archivo resources/main.js\n              . Migrations , Seeders and Model.  Actualmente existen 3 modelos\n              Product , Company y User usados en la realizacion de la api rest ,\n              cada uno tiene una migration y tambien un seeder CompaniesTableSeeder\n              ProductsTableSeeder y UsersTableSeeder los cuales generan una\n              inserción de datos fake usando factory. Estos a su vez son llamados en\n              DatabaseSeeder.\n               Api/UserController, Api/ProductController son usados para la\n              ejecucion del Crud por medio de los metodos get , post , put , y\n              delete de acuerdo a lo solicitado en el documento .\n         "
+                "\n          El projecto se realizo mediante el consumo de rutas api o end point\n          de Laravel 7 a travez de componentes elaborados en vue , por lo\n          tanto las vistas las encontrara en la carpeta Resources/js/views ,\n          estas a su vez se renderizan por medio del archivo routes/index.js\n          que se ejecuta dentro del archivo resources/main.js .\n        "
+              )
+            ]),
+            _vm._v(" "),
+            _c("h5", [_vm._v("Migrations , Seeders and Model.")]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "\n          Actualmente existen 3 modelos Product , Company y User usados en la\n          realizacion de la api rest , cada uno tiene una migration y tambien\n          un seeder CompaniesTableSeeder ProductsTableSeeder y\n          UsersTableSeeder los cuales generan una inserción de datos fake\n          usando factory. Estos a su vez son llamados en DatabaseSeeder. .\n        "
               )
             ])
+          ]),
+          _vm._v(" "),
+          _c("h5", [_vm._v("Controllers")]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "\n        Api/UserController, Api/ProductController son usados para la ejecucion\n        del Crud por medio de los metodos get , post , put , y delete de\n        acuerdo a lo solicitado en el documento\n      "
+            )
           ])
         ])
       ])
