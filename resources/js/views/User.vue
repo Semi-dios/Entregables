@@ -8,7 +8,7 @@
             </div>
       </div>
       <!-- /.card-header -->
-      <div class="card-body p-0">
+      <div class="card-body ">
          <div class="filter input-group mb-3 p-5">
             <input class="form-control" type="text" placeholder="Name Filter" v-model="filter_name"/>
           </div>

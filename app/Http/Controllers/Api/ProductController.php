@@ -33,7 +33,12 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $companies = Company::all();
+        if ($companies) {
+        return response()->json([ 'companies'=>$companies, 'message' => 'success  !!'], 200);
+        } else {
+            return response()->json([['error' => 'Unauthorized', 'message' => 'error !!'], 401]);
+        }
     }
 
     /**
@@ -44,7 +49,33 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'description'=>'required',
+            'price'=>'required',
+            'company'=>'required',
+
+        ]);
+
+
+
+        if($request->get('image')){
+           $image = $request->get('image');
+           $name = time().'.'.explode('/', explode(':', substr($image,0,strpos($image,';')))[1])[1];
+
+           \Image::make($request->get('image'))->save(public_path('images/').$name);
+        }
+
+        $product = new Product();
+        $product->name =e($request->name);
+        $product->company_id =e($request->company);
+        $product->description = e($request->description);
+        $product->price = e($request->price);
+        $product->image= $name;
+        $product->save();
+
+
+        return response()->json(['product' => $product, 'message' => 'updated!!'], 200);
     }
 
     /**

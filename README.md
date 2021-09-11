@@ -1,61 +1,58 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+Api Laravel Vue y Clever cloud
+Api rest basica que permite la realizacion de Crud por medio de laravel , que se consume en componentes de Vue.js:
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Clonar repo
+Requrimientos
 
-## About Laravel
+Composer
+Node js
+Laragon , Wamp, Xampp ,Mamp
+Laravel 7^*
+Php 7.14^*
+Mysql
+Apache
+En la carpeta raiz de su entorno de desarrollo digite git clone https://github.com/Semi-dios/Entregables
+Instale dependencias digitando npm i y luego composer i
+Renombre el archivo .env.example a .env
+Asigne la base de datos prueba y sus credenciales
+En la terminal digite php artisan key:generate
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+A continuacion digite
+    1. php artisan migrate 
+    2. php artisan migrate:refresh --seed
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Al digitar php artisan route:list podra visulizar las rutas actuales en este casi ubicadas en config/api.php
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Inicie servicios digitando php artisan serve -- En una terminal diferente digite npm run watch para que se inicie la compilacion del webpack (css,js,bootstrap,componentes )
 
-## Learning Laravel
+Acceda a la url http://127.0.0.1:8000/
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Rutas a usar : 
 
-## Laravel Sponsors
+https://entregables.herokuapp.com/public/#/curriculum
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-### Premium Partners
+https://entregables.herokuapp.com/public/#/users
+https://entregables.herokuapp.com/public/#/users/{id_User}/show
+https://entregables.herokuapp.com/public/#/users/{id_User}/edit
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
 
-## Contributing
+https://entregables.herokuapp.com/public/#/products
+https://entregables.herokuapp.com/public/#/products/create
+https://entregables.herokuapp.com/public/#/products/{id_product}/edit
+https://entregables.herokuapp.com/public/#/products/{id_product}/show
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
+Estructura
+El projecto se realizo mediante el consumo de rutas Api o end point de  Laravel 7  a tra vez de componentes elaborados en vue , por lo tanto las vistas las encontrara en la carpeta Resources/js/views , estas a su vez se renderizan por medio del archivo routes.js que se ejecuta dentro del archivo resources/main.js .
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Migrations , Seeders and Model
+Actualmente existen 3 modelos , Product , Company y User usados en la  realizacion de la api rest , cada uno tiene una migration y tambien un seeder CompaniesTableSeeder ProductsTableSeeder y UsersTableSeeder los cuales generan una inserción de datos fake usando factory. Estos a su vez son llamados en DatabaseSeeder.
 
-## License
+En el modelo aplique la proteccion fillable
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Controladores
+Api/UserController, ProductController son usados para la ejecucion del Crud por medio de los metodos get , post , put , y delete de acuerdo a lo solicitado en el documento .

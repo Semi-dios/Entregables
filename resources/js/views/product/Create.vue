@@ -7,21 +7,19 @@
 
             <!-- Profile Image -->
             <div class="card card-primary card-outline">
-                <div class="card-header d-flex justify-content-center">
-                  <img :src="'/images/'+ products.image  " alt="">
-                </div>
+
               <div class="card-body box-profile">
 
 
-                <h3 class="profile-username text-center">Edit Info Product</h3>
+                <h3 class="profile-username text-center">Create Product</h3>
 
-                <p class="text-muted text-center">{{ products.name }}</p>
+                <p class="text-muted text-center">{{ formData.name }}</p>
 
                   <form @submit.prevent="submit">
                       <div class="form-row">
                            <div class="form-group col-sm-12">
                               <label for="name">Name: </label>
-                              <input type="text" name="name" class="form-control" v-model="products.name" v-validate="'required|min:4'">
+                              <input type="text" name="name" class="form-control" v-model="formData.name" v-validate="'required|min:4'">
 
                           </div>
                               <div class="form-group col-sm-12">
@@ -37,7 +35,7 @@
                       <div class="form-row">
                             <div class="form-group col-sm-12">
                               <label for="description">Description:</label>
-                              <input type="text" class="form-control" name="description" v-model="products.description" v-validate="'required|min:4'">
+                              <input type="text" class="form-control" name="description" v-model="formData.description" v-validate="'required|min:4'">
                             </div>
                            <div class="form-group col-sm-12">
                                 <div
@@ -52,7 +50,7 @@
                       <div class="form-row">
                             <div class="form-group col-sm-12">
                                 <label for="price">Price: </label>
-                                <input type="text" class="form-control" name="price" v-model="products.price" v-validate="'required'">
+                                <input type="text" class="form-control" name="price" v-model="formData.price" v-validate="'required'">
                             </div>
                             <div class="form-group col-sm-12">
                                 <div
@@ -67,7 +65,7 @@
                       <div class="form-row">
                            <div class="form-group col-sm-12">
                               <label for="company">Company: </label>
-                              <select v-model="products.company.name" v-validate="'required|excluded:1'" name="company" @change="handleChange">
+                              <select v-model="formData.company" v-validate="'required|excluded:1'" name="company" @change="handleChange">
                                 <option v-for="option in companies"   v-bind:value="option.id">
                                     {{ option.name }}
                                 </option>
@@ -102,7 +100,7 @@
                         <div class="row mb-3">
                             <!-- /.col -->
                         <div class="col-4">
-                            <button type="submit" class="btn btn-success btn-block">Save</button>
+                            <button type="submit" class="btn btn-success btn-block">Create</button>
                         </div>
                         <!-- /.col -->
                         </div>
@@ -136,10 +134,10 @@
 
 <script>
 export default {
-  name: "ProductEdit",
+  name: "ProductCreate",
   data() {
     return {
-      products: [],
+
       error: "",
       formData: {
         name: "",
@@ -156,12 +154,12 @@ export default {
     };
   },
   methods: {
-    getinfoProduct() {
+    getinfoCompany() {
       console.log(this.$route.params.id);
       axios
-        .get("api/product-detail/edit/" + this.$route.params.id)
+        .get("api/product/create/")
         .then((response) => {
-          this.products = response.data.product;
+
           this.companies = response.data.companies;
           console.log( this.companies);
         })
@@ -194,16 +192,11 @@ export default {
         this.message = "";
         this.submitted = true;
         this.$validator.validate().then((isValid)=> {
-            this.formData.name = this.products.name;
-            this.formData.description = this.products.description;
-            this.formData.price = this.products.price;
-
-
             if(isValid){
-                axios.put('api/product-detail/edit/'+ this.$route.params.id, this.formData)
+                axios.post('api/product/save/', this.formData)
                 .then((response)=> {
                     this.successful = true;
-                    this.message= "Product update";
+                    this.message= "Product created";
                         console.log(response);
 
                 })
@@ -218,7 +211,7 @@ export default {
     }
   },
  created() {
-    this.getinfoProduct();
+    this.getinfoCompany();
   },
 
 

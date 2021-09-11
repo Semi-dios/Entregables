@@ -23,6 +23,8 @@ Route::delete('user-detail/{id}', 'Api\UserController@delete');
 
 Route::get('products', 'Api\ProductController@index');
 Route::get('product-detail/{id}', 'Api\ProductController@show');
+Route::get('product/create', 'Api\ProductController@create');
+Route::post('product/save', 'Api\ProductController@store');
 Route::get('product-detail/edit/{id}', 'Api\ProductController@edit');
 Route::put('product-detail/edit/{id}', 'Api\ProductController@update');
 Route::delete('product-detail/{id}', 'Api\ProductController@destroy');

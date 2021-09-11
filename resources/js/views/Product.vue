@@ -8,7 +8,7 @@
         </div>
       </div>
       <!-- /.card-header -->
-      <div class="card-body p-0">
+      <div class="card-body ">
         <div class="filter input-group mb-3 p-5">
           <input
             class="form-control"
@@ -17,6 +17,14 @@
             v-model="filter_name"
           />
         </div>
+        <router-link
+                class="btn btn-primary my-1 mr-3 bg-primary btn-sm"
+                to="/products/create"
+
+
+            >
+                <i class="fas fa-plus mr-1"></i> Add Product
+        </router-link>
         <export-excel
           class="btn btn-primary float-right m-1"
           :data="json_data"

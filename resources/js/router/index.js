@@ -53,6 +53,12 @@ const router = new VueRouter({
         component: require('../views/product/Edit.vue').default,
 
     },
+    {
+        path: '/products/create',
+        name: 'products.create',
+        component: require('../views/product/Create.vue').default,
+
+    },
 
 
   ]
