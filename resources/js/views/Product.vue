@@ -71,8 +71,7 @@
                   class="btn btn-app my-1 bg-danger btn-sm"
                   data-id="r.id"
                   @click="deleteProduct(r.id)"
-                  data-toggle="modal"
-                  data-target="#modal-delete"
+                  role="button"
                 >
                   <i class="fas fa-trash mr-1"></i> Delete
                 </a>

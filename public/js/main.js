@@ -2286,7 +2286,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {},
   data: function data() {
@@ -52121,11 +52120,7 @@ var render = function() {
                         "a",
                         {
                           staticClass: "btn btn-app my-1 bg-danger btn-sm",
-                          attrs: {
-                            "data-id": "r.id",
-                            "data-toggle": "modal",
-                            "data-target": "#modal-delete"
-                          },
+                          attrs: { "data-id": "r.id", role: "button" },
                           on: {
                             click: function($event) {
                               return _vm.deleteProduct(r.id)
@@ -52835,6 +52830,14 @@ var render = function() {
                         ]),
                         _vm._v(" "),
                         _c("input", {
+                          directives: [
+                            {
+                              name: "validate",
+                              rawName: "v-validate",
+                              value: "required",
+                              expression: "'required'"
+                            }
+                          ],
                           attrs: { type: "file", name: "image", id: "" },
                           on: { change: _vm.onFileChange }
                         })

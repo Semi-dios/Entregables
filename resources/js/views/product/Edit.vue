@@ -87,7 +87,7 @@
                       <div class="form-row">
                           <div class="form-group col-sm-12">
                               <label for="image">Image: </label>
-                              <input type="file" name="image" id=""   @change="onFileChange">
+                              <input type="file" name="image" id="" v-validate="'required'"  @change="onFileChange">
                            </div>
                               <div class="form-group col-sm-12">
                                 <div
@@ -220,6 +220,7 @@ export default {
  created() {
     this.getinfoUser();
   },
+
 
 };
 </script>
