@@ -69010,7 +69010,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   history: history,
-  base: window.location.origin,
+  //base: window.location.origin,
   routes: [{
     path: '/',
     name: 'dashboard',

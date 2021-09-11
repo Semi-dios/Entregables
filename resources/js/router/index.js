@@ -4,7 +4,7 @@ import VueRouter from 'vue-router';
 
 const router = new VueRouter({
   history,
-  base: window.location.origin,
+  //base: window.location.origin,
   routes:[
 
     {
