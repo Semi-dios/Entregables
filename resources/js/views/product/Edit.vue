@@ -87,7 +87,7 @@
                       <div class="form-row">
                           <div class="form-group col-sm-12">
                               <label for="image">Image: </label>
-                              <input type="file" name="image" id="" v-validate="'required'"  @change="onFileChange">
+                              <input type="file" name="image" id=""   @change="onFileChange">
                            </div>
                               <div class="form-group col-sm-12">
                                 <div
@@ -204,10 +204,14 @@ export default {
                 .then((response)=> {
                     this.successful = true;
                     this.message= "Product update";
-                    //console.log(this.message);
-                    setTimeout(() => {
+
+
+                    if( response ){
+                         setTimeout(() => {
                         this.$router.push('/products');
                     }, 3000);
+                    }
+
                 })
                 .catch((error)=> {
                     this.error = error;
