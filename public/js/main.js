@@ -52124,7 +52124,7 @@ var render = function() {
                         {
                           staticClass:
                             "btn btn-app my-1 mr-3 bg-success btn-sm",
-                          attrs: { href: "/#/products/" + r.id + "/show" }
+                          attrs: { href: "public/#/products/" + r.id + "/show" }
                         },
                         [
                           _c("i", { staticClass: "fas fa-eye mr-1" }),
@@ -52137,7 +52137,7 @@ var render = function() {
                         {
                           staticClass:
                             "btn btn-app my-1 mr-3 bg-primary btn-sm",
-                          attrs: { href: "/#/products/" + r.id + "/edit" }
+                          attrs: { href: "public/#/products/" + r.id + "/edit" }
                         },
                         [
                           _c("i", { staticClass: "fas fa-edit mr-1" }),
@@ -52379,7 +52379,7 @@ var render = function() {
                         {
                           staticClass:
                             "btn btn-app my-1 mr-3 bg-success btn-sm",
-                          attrs: { href: "/#/users/" + r.id + "/show" }
+                          attrs: { href: "public/#/users/" + r.id + "/show" }
                         },
                         [
                           _c("i", { staticClass: "fas fa-eye mr-1" }),
@@ -52392,7 +52392,7 @@ var render = function() {
                         {
                           staticClass:
                             "btn btn-app my-1 mr-3 bg-primary btn-sm",
-                          attrs: { href: "/#/users/" + r.id + "/edit" }
+                          attrs: { href: "public/#/users/" + r.id + "/edit" }
                         },
                         [
                           _c("i", { staticClass: "fas fa-edit mr-1" }),
