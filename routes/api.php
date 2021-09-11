@@ -25,6 +25,7 @@ Route::get('products', 'Api\ProductController@index');
 Route::get('product-detail/{id}', 'Api\ProductController@show');
 Route::get('product-detail/edit/{id}', 'Api\ProductController@edit');
 Route::put('product-detail/edit/{id}', 'Api\ProductController@update');
+Route::delete('product-detail/{id}', 'Api\ProductController@destroy');
 /* Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

@@ -2325,17 +2325,27 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       this.currPage = idx;
+    },
+    deleteProduct: function deleteProduct(id) {
+      var _this = this;
+
+      console.log(id);
+      axios["delete"]("api/product-detail/" + id).then(function (response) {
+        return _this.info = response;
+      });
+      this.$forceUpdate();
+      location.reload();
     }
   },
   mounted: function mounted() {
-    var _this = this;
+    var _this2 = this;
 
     this.axios.get("/api/products").then(function (response) {
-      _this.json_data = JSON.parse(JSON.stringify(response.data.products));
-      _this.rows = response.data.products; // console.log(this.json_data);
+      _this2.json_data = JSON.parse(JSON.stringify(response.data.products));
+      _this2.rows = response.data.products; // console.log(this.json_data);
     })["catch"](function (error) {
-      _this.error = error.response.data.message || error.message;
-      console.log(_this.error);
+      _this2.error = error.response.data.message || error.message;
+      console.log(_this2.error);
     });
   },
   computed: {
@@ -52108,20 +52118,7 @@ var render = function() {
                         {
                           staticClass:
                             "btn btn-app my-1 mr-3 bg-success btn-sm",
-                          attrs: { href: "public/#/users/" + r.id + "/show" }
-                        },
-                        [
-                          _c("i", { staticClass: "fas fa-eye mr-1" }),
-                          _vm._v("Show\n              ")
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "a",
-                        {
-                          staticClass:
-                            "btn btn-app my-1 mr-3 bg-success btn-sm",
-                          attrs: { href: "/#/products/" + r.id + "/show" }
+                          attrs: { href: "public/#/products/" + r.id + "/show" }
                         },
                         [
                           _c("i", { staticClass: "fas fa-eye mr-1" }),
@@ -52153,7 +52150,7 @@ var render = function() {
                           },
                           on: {
                             click: function($event) {
-                              return _vm.deleteModalWindow(r.id)
+                              return _vm.deleteProduct(r.id)
                             }
                           }
                         },

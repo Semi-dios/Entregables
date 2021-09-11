@@ -55,16 +55,16 @@
               <td>
                   <a
                   class="btn btn-app my-1 mr-3 bg-success btn-sm"
-                  :href="'public/#/users/' + r.id + '/show'"
+                  :href="'public/#/products/' + r.id + '/show'"
                 >
                   <i class="fas fa-eye mr-1"></i>Show
                 </a>
-                <a
+               <!--  <a
                   class="btn btn-app my-1 mr-3 bg-success btn-sm"
                   :href="'/#/products/' + r.id + '/show'"
                 >
                   <i class="fas fa-eye mr-1"></i>Show
-                </a>
+                </a> -->
                  <a
                   class="btn btn-app my-1 mr-3 bg-primary btn-sm"
                   :href="'public/#/products/' + r.id + '/edit'"
@@ -80,7 +80,7 @@
                 <a
                   class="btn btn-app my-1 bg-danger btn-sm"
                   data-id="r.id"
-                  @click="deleteModalWindow(r.id)"
+                  @click="deleteProduct(r.id)"
                   data-toggle="modal"
                   data-target="#modal-delete"
                 >
@@ -156,6 +156,14 @@ export default {
       }
       this.currPage = idx;
     },
+    deleteProduct(id) {
+
+            console.log(id);
+            axios.delete("api/product-detail/" + id).then((response) => (this.info = response));
+            this.$forceUpdate();
+            location.reload();
+
+    }
   },
 
   mounted() {

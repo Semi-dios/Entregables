@@ -128,6 +128,8 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = Product::findOrFail($id);
+        $user->delete();
+        return response()->json('Product deleted successfully', 204);
     }
 }
