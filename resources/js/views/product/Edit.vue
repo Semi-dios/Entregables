@@ -206,11 +206,6 @@ export default {
                     this.message= "Product update";
 
 
-                    if( response ){
-                         setTimeout(() => {
-                        this.$router.push('/products');
-                    }, 3000);
-                    }
 
                 })
                 .catch((error)=> {
