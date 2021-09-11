@@ -2733,6 +2733,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           axios.put('api/product-detail/edit/' + _this3.$route.params.id, _this3.formData).then(function (response) {
             _this3.successful = true;
             _this3.message = "Product update";
+            console.log(response);
           })["catch"](function (error) {
             _this3.error = error;
             _this3.submitted = false;

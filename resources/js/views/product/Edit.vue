@@ -204,7 +204,7 @@ export default {
                 .then((response)=> {
                     this.successful = true;
                     this.message= "Product update";
-
+                        console.log(response);
 
 
                 })
