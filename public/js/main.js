@@ -69017,7 +69017,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   history: history,
   base: window.location.origin,
   routes: [{
-    path: base + '/',
+    path: '/',
     name: 'dashboard',
     component: __webpack_require__(/*! ../views/Landing.vue */ "./resources/js/views/Landing.vue")["default"]
   }, {

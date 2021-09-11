@@ -8,7 +8,7 @@ const router = new VueRouter({
   routes:[
 
     {
-      path: base+'/',
+      path: '/',
       name:'dashboard',
       component: require('../views/Landing.vue').default,
     },
