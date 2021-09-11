@@ -206,7 +206,6 @@ export default {
                     this.message= "Product update";
                         console.log(response);
 
-
                 })
                 .catch((error)=> {
                     this.error = error;
@@ -221,9 +220,7 @@ export default {
  created() {
     this.getinfoUser();
   },
-  watch() {
-     this.getinfoUser();
-  }
+
 };
 </script>
 

@@ -2744,9 +2744,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   created: function created() {
     this.getinfoUser();
-  },
-  watch: function watch() {
-    this.getinfoUser();
   }
 });
 
